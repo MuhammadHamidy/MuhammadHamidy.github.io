@@ -1,0 +1,81 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#canvas {
+    background-image:url("./flappyfishbg.png");
+   
+}
+#start-screen {
+    display: relative;
+    position: absolute;
+    width: 360;
+    height: 640;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#playButton {
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#Game-Over {
+    display: none; /* Sembunyikan Game-Over awalnya */
+    position: absolute;
+    width: 360px;
+    height: 640px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: gameOverAnimation 0.5s ease-out forwards;
+}
+
+@keyframes gameOverAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#score-display {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
